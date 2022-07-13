@@ -14,4 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/awaken_dipper.mk
+    $(LOCAL_DIR)/derp_dipper.mk

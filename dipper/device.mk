@@ -11,7 +11,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 OVERRIDE_PRODUCT_COMPRESSED_APEX := false
 
 # Get non-open-source specific aspects
-$(call inherit-product-if-exists, vendor/xiaomi/dipper/dipper-vendor.mk)
+$(call inherit-product, vendor/xiaomi/dipper/dipper-vendor.mk)
 
 # Firmware
 $(call inherit-product, vendor/xiaomi-firmware/dipper/firmware.mk)
@@ -19,6 +19,10 @@ $(call inherit-product, vendor/xiaomi-firmware/dipper/firmware.mk)
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
     RemovePackages
+
+# Livedisplay
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@2.0-service-sdm
 
 # GrapheneCamera
 PRODUCT_PACKAGES += \

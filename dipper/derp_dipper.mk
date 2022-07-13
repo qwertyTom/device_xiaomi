@@ -14,21 +14,25 @@ TARGET_USES_AOSP_RECOVERY := true
 
 # GApps
 TARGET_GAPPS_ARCH := arm64
-USE_GAPPS := true
+WITH_GAPPS := true
 
-$(call inherit-product, vendor/awaken/config/common_full_phone.mk)
+DERP_BUILDTYPE := Community
+
+$(call inherit-product, vendor/derp/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := awaken_dipper
+PRODUCT_NAME := derp_dipper
 PRODUCT_DEVICE := dipper
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 8
 PRODUCT_MANUFACTURER := Xiaomi
 
+PRODUCT_SYSTEM_NAME := dipper
+
 BUILD_FINGERPRINT := "Xiaomi/dipper/dipper:8.1.0/OPM1.171019.011/V9.5.5.0.OEAMIFA:user/release-keys"
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="dipper-user 8.1.0 OPM1.171019.011 V9.5.5.0.OEAMIFA release-keys" \
-    PRODUCT_NAME="dipper"
+    TARGET_PRODUCT="dipper"
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
